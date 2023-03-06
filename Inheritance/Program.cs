@@ -6,20 +6,6 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
-
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
 
 
 
@@ -28,12 +14,32 @@ namespace Inheritance
              *  
              * Creatively display the class member values 
              */
+            var toucanSam = new Bird();
+           toucanSam.Beaks = true;
+            toucanSam.LightweightSkeleton= true;
+            toucanSam.Wings = true;
+            toucanSam.WarmBlood = true;
 
+            var franklinTurtle = new Reptile();
+            franklinTurtle.ColdBlood= true;
+            franklinTurtle.Scales= true;
+            franklinTurtle.NoEars = true;
+            franklinTurtle.OptionalLimbs = 4;
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
              *  
              * Creatively display the class member values 
              */
+            var newAnimal = new Animal[] { toucanSam, franklinTurtle };
+
+            foreach (var animal in newAnimal)
+            {
+                Console.WriteLine($"Sexually Reproduces: {animal.SexualReproduction}");
+                Console.WriteLine($"Is Multicellular: {animal.Multicellular}");
+                Console.WriteLine($"Heterotrophic: {animal.Heterotrophic}");
+                Console.WriteLine($"It travels by {animal.Motility}");
+                Console.WriteLine("");
+            }
         }
     }
 }
